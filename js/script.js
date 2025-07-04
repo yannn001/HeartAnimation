@@ -188,15 +188,6 @@ function render(a) {
   }
   heart.geometry.attributes.position.needsUpdate = true;
 
-const text = document.querySelector('.text');
-    if (text) {
-        // Use the beat value to sync with heart pulsing
-        const rotationX = beat.a * 20; // Scale for visual effect
-        const rotationY = beat.a * 20 + (controls.getAzimuthalAngle() * 30); // Add trackball rotation
-        
-        text.style.transform = `translate(-50%, -50%) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
-    }
-
 
   controls.update();
   renderer.render(scene, camera);
