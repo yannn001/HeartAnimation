@@ -26,7 +26,6 @@ body {
 .container span{
   position: absolute;
   transform-origin: center;
-  text-transform: uppercase;
   color: white;
   display: block;
  
