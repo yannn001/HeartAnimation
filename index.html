@@ -18,41 +18,5 @@
     <script src="js/OBJLoader.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/script.js"></script>
-     <script>
-    let isMouseDown = false; // Keep track of mouse button state
-    let startX = 0; // Keep track of initial mouse X position
-    let startY = 0; // Keep track of initial mouse Y position
-    let initialRotationX = 0; // Set the initial rotationX value
-    let initialRotationY = 0; // Set the initial rotationY value
-    let updatedRotationX = 0; // Set the updated rotationX value
-    let updatedRotationY = 0; // Set the updated rotationY value
-
-    // Start rotating text on mouse down
-    document.addEventListener('mousedown', (event) => {
-        isMouseDown = true;
-        startX = event.clientX;
-        startY = event.clientY;
-        initialRotationX = updatedRotationX; // Store the initial rotationX value
-        initialRotationY = updatedRotationY; // Store the initial rotationY value
-    });
-
-    // Stop rotating text on mouse up
-    document.addEventListener('mouseup', () => {
-        isMouseDown = false;
-    });
-
-    // Rotate text while mouse is down and moving
-    document.addEventListener('mousemove', (event) => {
-        if (isMouseDown) {
-            let deltaX = event.clientX - startX;
-            let deltaY = event.clientY - startY;
-            updatedRotationY = initialRotationY + deltaX * 0.2; // Update updatedRotationY based on horizontal mouse movement
-            updatedRotationX = initialRotationX + deltaY * 0.2; // Update updatedRotationX based on vertical mouse movement
-
-            let text = document.querySelector('.text');
-            text.style.transform = `translate(-50%, -50%) rotateX(${updatedRotationX}deg) rotateY(${updatedRotationY}deg)`;
-        }
-    });
-</script>
   </body>
 </html>
